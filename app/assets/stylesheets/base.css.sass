@@ -1,0 +1,41 @@
+@import colors/colorlovers
+
+$textColor: $base-text-color
+
+$bodyBackground: $base-color
+
+$heroUnitBackground: $main-color
+$heroUnitHeadingColor: $hero-unit-text-color
+$heroUnitLeadColor: $hero-unit-text-color
+
+$btnPrimaryBackground: $accent-color
+$btnPrimaryBackgroundHighlight: adjust-hue($btnPrimaryBackground, 5%)
+
+$btnBackground: $base-color
+$btnBackgroundHighlight: darken($base-color, 10%)
+$btnBorder: darken($base-color, 10%)
+
+$navbarBackgroundHighlight: $base-color
+$navbarBackground: $base-color
+
+$navbarText: $base-text-color
+$navbarLinkColor: $base-text-color
+$navbarLinkColorHover: $base-text-color - 60
+$navbarLinkColorActive: darken($base-text-color, 5%)
+$navbarLinkBackgroundHover: $base-color - 10
+$navbarLinkBackgroundActive: darken($navbarBackground, 5%)
+$navbarBrandColor: $base-text-color
+
+$hrBorder: darken($base-color, 10%)
+
+$eyecatchBackground: $heroUnitBackground
+$eyecatchTextColor: $hero-unit-text-color
+
+@import bootstrap
+@import bootstrap-responsive
+@import compass/utilities
+@import compass/css3
+@import font-awesome
+
+body
+  padding: 60px 0 0

@@ -1,0 +1,38 @@
+!!! 5
+%html{lang: 'ja'}
+  %head
+    %meta{charset: 'utf-8'}
+    %title= application_name
+    %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}
+    %meta{content: '', name: 'description'}
+    %meta{content: '', name: 'author'}
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    - # should deploy favicon and apple touch icons
+    %link{href: asset_path('ico/favicon.ico', type: 'ico'), :rel => 'shortcut icon'}
+    %link{href: asset_path('ico/apple-touch-icon-144-precomposed.png', type: 'ico'), rel: 'apple-touch-icon-precomposed', sizes: '144x144'}
+    %link{href: asset_path('ico/apple-touch-icon-114-precomposed.png', type: 'ico'), rel: 'apple-touch-icon-precomposed', sizes: '114x114'}
+    %link{href: asset_path('ico/apple-touch-icon-72-precomposed.png', type: 'ico'),  rel: 'apple-touch-icon-precomposed', sizes: '72x72'}
+    %link{href: asset_path('ico/apple-touch-icon-57-precomposed.png', type: 'ico'),  rel: 'apple-touch-icon-precomposed'}
+  %body{class: controller_name}
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar{data: {target: '.nav-collapse', toggle: 'collapse'}}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to application_name, root_path, class: 'brand'
+          %ul.nav.pull-right
+            %li= link_to 'Sign up', '#'
+      = render 'layouts/flash'
+    .container
+      .row
+        = yield
+      .row
+        .span12
+          %footer
+            %hr
+            %p &copy; #{application_name} #{Date.today.year}
