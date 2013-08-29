@@ -1,0 +1,10 @@
+%h2
+  = @post.title
+  %span.btn.btn-link= link_to 'Edit', [:edit, @post], data: { pjax: 'true' }
+
+.well.long-sentence
+  = simple_format @post.body
+
+.well
+  %p.small YOU CANNOT ROLLBACK if you deleted this post.
+  = link_to 'Delete', @post, method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger form-button'

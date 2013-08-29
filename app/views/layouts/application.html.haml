@@ -25,12 +25,18 @@
             %span.icon-bar
             %span.icon-bar
           = link_to application_name, root_path, class: 'brand'
-          %ul.nav.pull-right
-            %li= link_to 'Sign up', '#'
       = render 'layouts/flash'
+
+    .indicator.hidden
+      Loading...
+      = image_tag 'indicator.gif'
+
     .container
       .row
-        = yield
+        .span4
+          = yield
+        .span8#container
+          = yield :detail
       .row
         .span12
           %footer

@@ -1,0 +1,7 @@
+= simple_form_for @post do |f|
+  = f.input :title, input_html: {class: 'input-block-level input-expand', placeholder: 'Input post title'}
+  = f.input :body, input_html: {rows: 4, class: 'input-block-level input-expand', placeholder: 'Input post content'}
+  .form-actions
+    = f.submit class: 'btn btn-primary form-button'
+    - if @post.persisted?
+      = link_to 'Cancel', @post, class: 'btn btn-link', data: { pjax: 'true' }

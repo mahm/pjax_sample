@@ -1,5 +1,9 @@
 module ApplicationHelper
   def application_name
-    'mahm Rails Template'
+    'Pjax Sample'
+  end
+
+  def selected_class(path)
+    current_page?(path) ? 'selected' : nil
   end
 end

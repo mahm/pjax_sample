@@ -1,0 +1,6 @@
+- unless pjax?
+  = render 'index'
+
+- content_for :detail do
+  %h3 New Post
+  = render 'form'

@@ -1,0 +1,6 @@
+%p
+  = link_to 'New Post', [:new, :post], class: 'btn', data: { pjax: 'true' }
+
+%ul.nav.nav-tabs.nav-stacked
+  - (@posts || []).each do |post|
+    %li= link_to post.title, post, class: "selectable #{selected_class(post)}", data: { pjax: 'true' }

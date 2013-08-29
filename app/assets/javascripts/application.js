@@ -11,5 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.ui.effect-slide
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.pjax
+//= require app

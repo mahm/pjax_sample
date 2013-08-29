@@ -37,21 +37,20 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "pg"
+gem "pg", group: :production
 gem "unicorn"
 gem "compass-rails"
 gem "zurui-sass-rails"
 gem "font-awesome-rails"
 gem "haml-rails"
-gem "jbuilder", "~> 1.2"
+gem 'jquery-ui-rails'
 gem "rack-pjax"
 gem "bootstrap-sass", "~> 2.3.2.0"
 gem "rails_config"
 gem "simple_form"
-gem "devise"
 gem "squeel"
-gem "active_attr"
 gem "default_value_for"
+
 group :development do
   gem "erb2haml"
   gem "i18n_generators"
