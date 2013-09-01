@@ -1,12 +1,21 @@
 $ ->
   "use strict"
+
+  $selectables = $('a.selectable')
+
+  changeCurrentBox = ($obj) ->
+    $selectables.removeClass('selected')
+    $obj.addClass('selected')
+
   (->
     if $.support.pjax
+      $.pjax.enable()
+
       $pjaxContainer = $('#container')
       $indicator = $('.indicator')
 
       selectContainer = (options) ->
-        if options.container
+        if options && ('container' in options)
           "#{options.container}"
         else
           '#container'
@@ -46,11 +55,15 @@ $ ->
       $(document).on 'pjax:timeout', (e) ->
         console.log 'pjax:timeout'
         e.preventDefault()
+
+      $(document).on 'pjax:popstate', (e) ->
+        console.log 'pjax:popstate'
+        $currentBox = $selectables.filter("a[href='#{e.state.url}']")
+        changeCurrentBox($currentBox)
   )()
 
   (->
-    $(document).on 'click', 'a.selectable', (e) ->
+    $(document).on 'click', 'a.selectable', ->
       $self = $(this)
-      $('a.selectable').removeClass('selected')
-      $self.addClass('selected')
+      changeCurrentBox($self)
   )()
